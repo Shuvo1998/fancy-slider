@@ -6,8 +6,6 @@ const sliderBtn = document.getElementById('create-slider');
 const sliderContainer = document.getElementById('sliders');
 const searchField = document.getElementById('search');
 
-
-
 // selected image 
 let sliders = [];
 searchField.addEventListener('keypress',function(event){
@@ -55,9 +53,8 @@ const selectItem = (event, img) => {
   if (item === -1) {
     sliders.push(img);
   } else {
-    // Double selection issue
-    // alert('Hey, Already added !')
-    element.classList.toggle("d-none");
+    sliders.pop(img);
+    element.classList.toggle("added");
   }
 }
 var timer
