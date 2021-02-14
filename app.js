@@ -34,7 +34,6 @@ const getImages = (query) => {
     .then(data => showImages(data.hits))
     .catch(err => console.log(err))
 }
-
 let slideIndex = 0;
 const selectItem = (event, img) => {
   let element = event.target;
@@ -44,7 +43,9 @@ const selectItem = (event, img) => {
   if (item === -1) {
     sliders.push(img);
   } else {
-    alert('Hey, Already added !')
+    // Double selection issue
+    // alert('Hey, Already added !')
+    element.classList.toggle("d-none");
   }
 }
 var timer
