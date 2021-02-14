@@ -5,7 +5,6 @@
   margin: 0 auto;
   position: relative;
 }
-
 .gallery-header {
   display: none;
 }
@@ -64,3 +63,4 @@ img {
     width: 90%;
   }
 }
+
