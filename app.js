@@ -5,6 +5,7 @@ const searchBtn = document.getElementById('search-btn');
 const sliderBtn = document.getElementById('create-slider');
 const sliderContainer = document.getElementById('sliders');
 const search = document.getElementById('search');
+const backBtn = document.getElementById('back-btn');
 // selected image 
 let sliders = [];
 
@@ -116,8 +117,6 @@ searchBtn.addEventListener('click', function () {
   // const search = document.getElementById('search');
   getImages(search.value);
   sliders.length = 0;
-  // sliders.length = 0;
-  // toggleSpinner('searchBtn event');
 })
 sliderBtn.addEventListener('click', function () {
   createSlider()
@@ -135,4 +134,11 @@ search.addEventListener('keypress', function (event) {
   if (event.key === 'Enter') {
     searchBtn.click();
   }
+})
+backBtn.addEventListener('click', function () {
+  document.querySelector('.main').style.display = 'none';
+  clearInterval(timer);
+  // const search = document.getElementById('search');
+  getImages(search.value);
+  sliders.length = 0;
 })
